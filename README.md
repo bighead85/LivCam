@@ -36,6 +36,7 @@ Run raspistillWeb
 
 
 To run on start up: create the following .sh file
+  
   #!/bin/bash
   cd /home/pi/path/to/Development/env/raspistillWeb
   ../bin/pserve development.ini
