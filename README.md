@@ -14,31 +14,32 @@ Make sure that your raspbian and your camera is working. Try to make a photo wit
 
 Install python2.7-dev (if not already on your system), virtualenv, setuptools and exif:
 
-sudo apt-get install python2.7-dev python-virtualenv python-setuptools exif
+  sudo apt-get install python2.7-dev python-virtualenv python-setuptools exif
 
 Create a virtual environment for python (sudo not required and not recommended):
 
-mkdir ~/Development (Or another directory)
-cd ~/Development
-virtualenv --no-site-packages env
-cd env
+  mkdir ~/Development (Or another directory)
+  cd ~/Development
+  virtualenv --no-site-packages env
+  cd env
+
 Install raspistillWeb
 
-git clone https://github.com/bighead85/LivCam.git
-cd raspistillWeb
-../bin/python setup.py develop
+  git clone https://github.com/bighead85/LivCam.git
+  cd raspistillWeb
+  ../bin/python setup.py develop
 
 Run raspistillWeb
 
-../bin/pserve development.ini
-surf http://<adress of your pi>:6543
+  ../bin/pserve development.ini
+  surf http://<adress of your pi>:6543
 
 
 To run on start up: create the following .sh file
-#!/bin/bash
-cd /home/pi/path/to/Development/env/raspistillWeb
-../bin/pserve development.ini
+  #!/bin/bash
+  cd /home/pi/path/to/Development/env/raspistillWeb
+  ../bin/pserve development.ini
 
 then at the end of 'crontab -e'
 
-@reboot /home/pi/path/to/script.sh
+  @reboot /home/pi/path/to/script.sh
